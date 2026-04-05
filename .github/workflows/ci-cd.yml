@@ -21,13 +21,20 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore StudentManagement.sln
+        run: dotnet restore
 
-      - name: Build solution
-        run: dotnet build StudentManagement.sln -c Release
+      # 🔥 FIX: Build in correct order
+      - name: Build Core
+        run: dotnet build StudentManagement.Core/StudentManagement.Core.csproj -c Release
+
+      - name: Build Infrastructure
+        run: dotnet build StudentManagement.Infrastructure/StudentManagement.Infrastructure.csproj -c Release
+
+      - name: Build API
+        run: dotnet build StudentManagement.API/StudentManagement.API.csproj -c Release
 
       - name: Run unit tests
-        run: dotnet test StudentManagement.Tests/StudentManagement.Tests.csproj --no-build -c Release --verbosity normal --logger "trx;LogFileName=test-results.trx"
+        run: dotnet test StudentManagement.Tests/StudentManagement.Tests.csproj -c Release --logger "trx;LogFileName=test-results.trx"
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
