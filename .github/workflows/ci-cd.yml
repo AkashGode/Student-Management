@@ -24,7 +24,7 @@ jobs:
         run: dotnet restore StudentManagement.sln
 
       - name: Build solution
-        run: dotnet build StudentManagement.sln -c Release --no-restore
+        run: dotnet build StudentManagement.sln -c Release
 
       - name: Run unit tests
         run: dotnet test StudentManagement.Tests/StudentManagement.Tests.csproj --no-build -c Release --verbosity normal --logger "trx;LogFileName=test-results.trx"
