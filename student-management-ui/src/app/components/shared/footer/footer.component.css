@@ -1,0 +1,22 @@
+.app-footer {
+  width: 100%;
+  background: #111827;
+  color: #d1d5db;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.divider {
+  color: #6b7280;
+}

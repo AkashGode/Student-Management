@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <div class="nav-brand">
+    <span class="nav-icon">🎓</span>
+    <span class="nav-title">Student Management System</span>
+  </div>
+  <div class="nav-links">
+    <a routerLink="/students" routerLinkActive="active" class="nav-link">📋 Students</a>
+  </div>
+  <div class="nav-user">
+    <span class="nav-username">👤 {{ authService.getUsername() }}</span>
+    <button class="logout-btn" (click)="logout()">Logout →</button>
+  </div>
+</nav>

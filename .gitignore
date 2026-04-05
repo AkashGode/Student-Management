@@ -1,0 +1,18 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+logs/
+*.log
+
+## Docker
+.dockerignore
+
+## IDE
+.vscode/
+.idea/
+
+## Environment
+appsettings.Production.json
